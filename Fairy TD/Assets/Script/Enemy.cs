@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
     public float speed = 1f;
     public GameObject path;
@@ -13,6 +13,11 @@ public class Monster : MonoBehaviour {
     private int currPoint = 1;
 
     private Vector3 deltaPos;
+
+    private bool dead = false;
+
+    public bool Dead { get { return dead; } }
+
 	// Use this for initialization
 	void Start () {
         pathPoints = path.GetComponentsInChildren<Transform>();

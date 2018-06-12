@@ -35,7 +35,8 @@ public class SpawnPlace : MonoBehaviour {
     private void GenerateObject()
     {
         int index = UnityEngine.Random.Range(0, monsterPrefabs.Length - 1);
-        GameObject obj = GameObject.Instantiate(monsterPrefabs[index], transform.position, transform.rotation);
+        GameObject obj = GameObject.Instantiate(monsterPrefabs[index], transform.position, transform.rotation) as GameObject;
+  //      Debug.Log(obj.tag);
         spawnedNumber++;
         
     }
