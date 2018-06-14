@@ -6,6 +6,8 @@ using UnityEngine;
 public class Tower : MonoBehaviour {
 
     public GameObject weapon;
+    public Transform weaponSpawnPoint;
+    public float attackSpeed = 1f;
 
     public float attackRadius = 5f;
     public float attackInterval = 2f;
@@ -16,6 +18,7 @@ public class Tower : MonoBehaviour {
 
     private Enemy target;
 
+    private float attackTimer = 0f;
 	// Use this for initialization
 	void Start () {
        
@@ -23,26 +26,34 @@ public class Tower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-  //      enemies.Clear();
         objectsInArea = Physics.OverlapSphere(transform.position, attackRadius);
         
-        foreach(Collider col in objectsInArea)
+        if(target == null)
         {
-            Enemy enemy = col.gameObject.GetComponent<Enemy>();
-            
-            if (enemy != null)
-            {               
-                if (target == null)
-                    target = enemy;
-                else if(DistanceToEnemy(enemy) < DistanceToEnemy(target))
-                    target = enemy;
+            foreach (Collider col in objectsInArea)
+            {
+                Enemy enemy = col.gameObject.GetComponent<Enemy>();
+
+                if (enemy != null)
+                {
+                    if (target == null)
+                        target = enemy;
+                    else if (DistanceToEnemy(enemy) < DistanceToEnemy(target))
+                        target = enemy;
+                }
             }
         }
-
+        
 
         if(target != null)
         {
-            Attack();
+            if(attackTimer <= 0)
+            {
+                Attack();
+                attackTimer = attackInterval;
+            }           
+            else
+                attackTimer -= Time.deltaTime;
 
             if (DistanceToEnemy(target) > attackRadius || target.Dead)
                 target = null;
@@ -56,6 +67,10 @@ public class Tower : MonoBehaviour {
 
     private void Attack()
     {
-        Debug.Log("Attack: " + target.transform.position);
+ //       Debug.Log("Attack: " + target.transform.position);
+        GameObject obj = GameObject.Instantiate(this.weapon, weaponSpawnPoint.position, weapon.transform.rotation);
+        Weapon weaponObj = obj.GetComponent<Weapon>();
+        weaponObj.speed = attackSpeed;
+        weaponObj.target = target.transform.position;
     }
 }

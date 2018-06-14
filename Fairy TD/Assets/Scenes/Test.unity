@@ -145,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4492373863752950, guid: 4d7808b6985ec4c49ad059a3aded0eeb, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4979562824966314, guid: 4d7808b6985ec4c49ad059a3aded0eeb, type: 2}
       propertyPath: m_LocalPosition.x
@@ -168,9 +168,9 @@ GameObject:
   - component: {fileID: 238712560}
   - component: {fileID: 238712559}
   - component: {fileID: 238712558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -229,6 +229,34 @@ Transform:
   m_Father: {fileID: 591183917}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &398410695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 398410696}
+  m_Layer: 0
+  m_Name: WeaponSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &398410696
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398410695}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 11.1, y: -1.6, z: 45.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1077610596}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -180, y: -90, z: 0}
 --- !u!1 &439337881
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,9 +267,9 @@ GameObject:
   - component: {fileID: 439337884}
   - component: {fileID: 439337883}
   - component: {fileID: 439337882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -308,9 +336,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 591183917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -330,8 +358,13 @@ Transform:
   - {fileID: 1885538825}
   - {fileID: 238712560}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1077610596 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4887256724252060, guid: 13af181ee92f87640a91108b07438f90,
+    type: 2}
+  m_PrefabInternal: {fileID: 1804554515}
 --- !u!1001 &1173530914
 Prefab:
   m_ObjectHideFlags: 0
@@ -408,9 +441,9 @@ GameObject:
   - component: {fileID: 1318130609}
   - component: {fileID: 1318130608}
   - component: {fileID: 1318130607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -596,7 +629,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801588838}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 800, y: 1.09, z: 456.61}
+  m_LocalPosition: {x: 800, y: -5.1, z: 456.61}
   m_LocalScale: {x: 10.252129, y: 10.252129, z: 10.252129}
   m_Children: []
   m_Father: {fileID: 0}
@@ -641,6 +674,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114339675127324186, guid: 13af181ee92f87640a91108b07438f90,
+        type: 2}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1422433848225298, guid: 8d4d2295d4787984d96614f415ce53e7,
+        type: 2}
+    - target: {fileID: 114339675127324186, guid: 13af181ee92f87640a91108b07438f90,
+        type: 2}
+      propertyPath: attackRadius
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114339675127324186, guid: 13af181ee92f87640a91108b07438f90,
+        type: 2}
+      propertyPath: weaponSpawnPoint
+      value: 
+      objectReference: {fileID: 398410696}
+    - target: {fileID: 114339675127324186, guid: 13af181ee92f87640a91108b07438f90,
+        type: 2}
+      propertyPath: attackSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13af181ee92f87640a91108b07438f90, type: 2}
   m_IsPrefabParent: 0
@@ -654,9 +708,9 @@ GameObject:
   - component: {fileID: 1885538825}
   - component: {fileID: 1885538824}
   - component: {fileID: 1885538823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Terrain3
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -778,5 +832,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

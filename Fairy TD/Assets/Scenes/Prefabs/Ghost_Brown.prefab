@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 4091156666954876}
   - component: {fileID: 95559457256286016}
   - component: {fileID: 114835151813327826}
-  - component: {fileID: 136281833171448756}
+  - component: {fileID: 136402162968542950}
   m_Layer: 0
   m_Name: Ghost_Brown
   m_TagString: Enemy
@@ -215,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873435705125716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 727.8085, y: 1.7, z: 500.40427}
+  m_LocalPosition: {x: 856.7942, y: 0, z: 460.02457}
   m_LocalScale: {x: 958.6373, y: 958.637, z: 958.637}
   m_Children:
   - {fileID: 4559105886085756}
@@ -392,19 +392,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   path: {fileID: 1053744415249752, guid: 4d7808b6985ec4c49ad059a3aded0eeb, type: 2}
---- !u!136 &136281833171448756
+  lifeStrength: 20
+--- !u!136 &136402162968542950
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1873435705125716}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.008
-  m_Height: 0.02
+  m_Radius: 0.01
+  m_Height: 0.03
   m_Direction: 1
-  m_Center: {x: 0, y: 0.009, z: 0}
+  m_Center: {x: 0, y: 0.005, z: 0}
 --- !u!137 &137225505869592764
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

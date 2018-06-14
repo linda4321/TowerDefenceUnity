@@ -16,6 +16,7 @@ public class SpawnPlace : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         timer = interval;
+        Debug.Log("Pos " + transform.position);
 	}
 	
 	// Update is called once per frame
