@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        transform.LookAt(target);
     }
 
     // Update is called once per frame
@@ -49,16 +50,32 @@ public class Weapon : MonoBehaviour
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
-            Destroy(this.gameObject, pauseToDisappear);
-            Debug.Log("Grounded");
+            DestroyOnGroundCollision();
         }
         else if (col.gameObject.tag == "Enemy" && !isGrounded)
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             Debug.Log("Collision");
-            Destroy(this.gameObject);
             enemy.GetDamage(strength);
+            DestroyOnEnemyCollision();
         }
 
+        OnCollision();
     }
+
+    protected virtual void DestroyOnGroundCollision()
+    {
+        Destroy(this.gameObject, pauseToDisappear);
+    }
+
+    protected virtual void DestroyOnEnemyCollision()
+    {
+
+        Destroy(this.gameObject);
+    }
+
+    protected virtual void OnCollision()
+    {
+    }
+
 }
