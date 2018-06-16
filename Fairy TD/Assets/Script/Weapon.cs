@@ -5,20 +5,20 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-    public Vector3 target;
+    public Enemy target;
     public float pauseToDisappear = 2f;
     public float strength = 5f;
 
-    public float speed = 1f;
+    public float speed = 10f;
 
     private bool isGrounded;
-    private Rigidbody body;
 
+    private bool launch;
+    private Vector3 targetPoint;
+    private Rigidbody body;
     // Use this for initialization
     void Start()
     {
-        body = GetComponent<Rigidbody>();
-        transform.LookAt(target);
     }
 
     // Update is called once per frame
@@ -29,50 +29,48 @@ public class Weapon : MonoBehaviour
 
     void FixedUpdate()
     {
-        //      Vector3 targetDir = target.transform.position - transform.position;
-        //        float step = 1 * Time.deltaTime;
-        //       Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-        //       Debug.DrawRay(transform.position, newDir, Color.red);
-        //       transform.rotation = Quaternion.LookRotation(newDir);
-        //     Vector3 targetDir = target.transform.position - transform.position;
-        // The step size is equal to speed times frame time.
-        //     float step = 2 * Time.deltaTime;
-        //     transform.position = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        if (!isGrounded)
-            transform.position = Vector3.MoveTowards(transform.position, target, speed);
-        // transform.rotation = Quaternion.LookRotation(newDir);
+        if (launch && !isGrounded)
+        {
+            body.AddForce((targetPoint - transform.position), ForceMode.Impulse);
+        }
     }
 
+    public void Launch(Enemy target)
+    {
+        transform.LookAt(target.transform.position);
+        targetPoint = target.transform.position + new Vector3(0, target.GetComponent<Collider>().bounds.size.y / 2, 0);
+        body = GetComponent<Rigidbody>();
+        launch = true;
+    }
 
     void OnCollisionEnter(Collision col)
     {
-
         if (col.gameObject.tag == "Ground")
         {
             isGrounded = true;
-            DestroyOnGroundCollision();
+            Destroy(this.gameObject, pauseToDisappear);
         }
         else if (col.gameObject.tag == "Enemy" && !isGrounded)
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             Debug.Log("Collision");
             enemy.GetDamage(strength);
-            DestroyOnEnemyCollision();
+            Destroy(this.gameObject);
         }
 
         OnCollision();
     }
 
-    protected virtual void DestroyOnGroundCollision()
-    {
-        Destroy(this.gameObject, pauseToDisappear);
-    }
+    //protected virtual void DestroyOnGroundCollision()
+    //{
+    //    Destroy(this.gameObject, pauseToDisappear);
+    //}
 
-    protected virtual void DestroyOnEnemyCollision()
-    {
+    //protected virtual void DestroyOnEnemyCollision()
+    //{
 
-        Destroy(this.gameObject);
-    }
+    //    Destroy(this.gameObject);
+    //}
 
     protected virtual void OnCollision()
     {

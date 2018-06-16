@@ -9,7 +9,12 @@ public class BombTower : Tower {
 
     private float rotationSpeed = 6f;
     private Vector3 startRot = new Vector3(0, 0, 0);
-	
+
+    protected override void InitTower()
+    {
+        startRot = transform.rotation.eulerAngles;
+    }
+
     void FixedUpdate()
     {
         if (target != null)

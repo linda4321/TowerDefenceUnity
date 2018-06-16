@@ -571,4 +571,5 @@ MonoBehaviour:
   attackSpeed: 2
   attackRadius: 100
   attackInterval: 2
+  price: 30
   topBase: {fileID: 1971082402155192}

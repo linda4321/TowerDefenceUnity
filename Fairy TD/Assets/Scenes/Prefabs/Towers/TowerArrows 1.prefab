@@ -1257,3 +1257,4 @@ MonoBehaviour:
   attackSpeed: 1
   attackRadius: 100
   attackInterval: 2
+  price: 15

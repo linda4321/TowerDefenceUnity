@@ -9,23 +9,28 @@ public class Tower : MonoBehaviour {
 
     public Transform[] weaponSpawns;
 
-    
     public float attackSpeed = 1f;
-
     public float attackRadius = 5f;
     public float attackInterval = 2f;
 
-    private Transform weaponSpawnPoint;
-    //   private Queue<Enemy> enemies;
-
-    private Collider[] objectsInArea;
+    public int price = 5;
 
     protected Enemy target;
 
+    private Transform weaponSpawnPoint;
+    private Collider[] objectsInArea;
     private float attackTimer;
+
+    public int Price { get { return price; } }
+
 	// Use this for initialization
 	void Start () {
         attackTimer = attackInterval;
+    }
+
+    protected virtual void InitTower()
+    {
+
     }
 	
 	// Update is called once per frame
@@ -78,11 +83,12 @@ public class Tower : MonoBehaviour {
     private void Attack()
     {
         ChangeWeaponSpawnPoint();
- //       Debug.Log("Attack: " + target.transform.position);
+        Debug.Log("Attack: " + target.gameObject.name);
         GameObject obj = GameObject.Instantiate(this.weapon, weaponSpawnPoint.position, weapon.transform.rotation);
         Weapon weaponObj = obj.GetComponent<Weapon>();
         weaponObj.speed = attackSpeed;
-        weaponObj.target = target.transform.position;
+        weaponObj.target = target;
+        weaponObj.Launch(target);
     }
 
     protected virtual void ChangeWeaponSpawnPoint()

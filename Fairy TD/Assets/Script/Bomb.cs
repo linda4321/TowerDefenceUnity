@@ -5,25 +5,7 @@ using UnityEngine;
 public class Bomb : Weapon {
 
     public GameObject explosion;
-   // private ParticleSystem[] particles;
 
-  //  private float duration = 0;
-    void Start()
-    {
-   //     particles = explosion.GetComponentsInChildren<ParticleSystem>();
-
-   //     foreach (ParticleSystem p in particles)
-   //         if (p.main.duration > duration)
-   //             duration = p.main.duration;
-    }
-
-    //protected override void DestroyOnGroundCollision()
-    //{
-    //}
-
-    //protected override void DestroyOnEnemyCollision()
-    //{
-    //}
 
     protected override void OnCollision()
     {
@@ -40,5 +22,6 @@ public class Bomb : Weapon {
                 p.Play();
 
         Destroy(this.gameObject);
+        Destroy(explosion.gameObject, duration);
     }
 }

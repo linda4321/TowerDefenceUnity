@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     public float speed = 1f;
     public GameObject path;
     public float lifeStrength = 5f;
+    public int priceForDeath = 5;
 
     private Transform[] pathPoints;
 
@@ -25,7 +26,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         pathPoints = path.GetComponentsInChildren<Transform>();
         anim = GetComponent<Animator>();
-        anim.SetBool("move", true);
+        anim.SetBool("walk", true);
         UpdateDestination();
         Debug.Log(pathPoints.Length);
     }
@@ -63,7 +64,6 @@ public class Enemy : MonoBehaviour {
 
     private void Die()
     {
-        speed = 0;
         dead = true;
         anim.SetTrigger("dead");
         StartCoroutine(WaitForDeath());    
@@ -73,6 +73,7 @@ public class Enemy : MonoBehaviour {
     {
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         Destroy(this.gameObject);
+        LevelManager.Instance.AddCoins(priceForDeath);
     }
 
     private void UpdateDestination()

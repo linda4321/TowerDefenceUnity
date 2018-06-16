@@ -68,5 +68,6 @@ public class TowerField : MonoBehaviour {
                 angY,
                 tower.transform.eulerAngles.z);
         tower.transform.position = new Vector3(trans.position.x, y, trans.position.z);
+        LevelManager.Instance.RemoveCoins(tower.GetComponent<Tower>().Price);
     }
 }
