@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 54e321042acd2a343acd4bad46837c77
+timeCreated: 1529421822
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Black Han Sans
+  fontNames:
+  - Black Han Sans
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
