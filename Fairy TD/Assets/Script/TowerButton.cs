@@ -10,6 +10,9 @@ public class TowerButton : MonoBehaviour {
     [SerializeField]
     private GameObject towerObjectMini;
 
+    [SerializeField]
+    private Text price;
+
     private Button button;
     private Tower tower;
 
@@ -17,6 +20,11 @@ public class TowerButton : MonoBehaviour {
     {
         button = GetComponent<Button>();
         tower = towerObject.GetComponent<Tower>();
+    }
+
+    void Start()
+    {
+        price.text = tower.Price.ToString("00");
     }
 
     void Update()
@@ -48,7 +56,6 @@ public class TowerButton : MonoBehaviour {
             return towerObjectMini;
         }
     }
-
-  //  public int TowerPrice { get { return tower.Price; } }
+    
 
 }

@@ -8,6 +8,9 @@ public class LevelManager : MonoBehaviour {
 
     public float gateStrength = 30f;
     public SimpleHealthBar healthBar;
+    public Color mainColor;
+    public Color secondColor;
+
     public CoinPanel coinPanel;
 
     public Camera mainCamera;
@@ -27,6 +30,7 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
         coinPanel.UpdateCoinPanel(coins);
         currStrength = gateStrength;
+        healthBar.UpdateColor(mainColor);
         healthBar.UpdateBar(currStrength, gateStrength);
 	}
 	
@@ -53,7 +57,7 @@ public class LevelManager : MonoBehaviour {
         currStrength -= damage;
 
         if (currStrength <= gateStrength / 4)
-            healthBar.UpdateColor(new Color(141, 27, 34));
+            healthBar.UpdateColor(secondColor);
 
         healthBar.UpdateBar(currStrength, gateStrength);
     }

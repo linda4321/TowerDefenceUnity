@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 95728914460696584}
   - component: {fileID: 114679996726193718}
   - component: {fileID: 136737252340626540}
+  - component: {fileID: 54924185850512238}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Enemy
@@ -709,6 +710,21 @@ Transform:
   m_Father: {fileID: 4373286290855540}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54924185850512238
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106522067372612}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 32
+  m_CollisionDetection: 0
 --- !u!65 &65080158249178386
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -761,7 +777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add31e0b7098d4d4788fe38990ea7667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 20736933318886746, guid: 618d058c7b2f24242a3bf1a10bf05713, type: 2}
 --- !u!114 &114244891765520488
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -856,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c6496300bbaee49aa96a9983a78e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 1
   lifeStrength: 20
   attackStrength: 5
   priceForDeath: 10
