@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 33796988}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 307571307}
   m_Layer: 5
   m_Name: TowerStone
-  m_TagString: Untagged
+  m_TagString: StoneBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,10 +428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ebea387aade49479f6ca88ee194485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerObject: {fileID: 1280745020286526, guid: 7720a05ebf3ca0743a1faaff4825b090,
+  towerObject: {fileID: 1435220220681130, guid: 627e6d940f3046743ac7bb10aea08efe,
     type: 2}
-  towerObjectMini: {fileID: 1280745020286526, guid: cb4e8f1f8b8429a408281fb2f532ae51,
+  towerObjectMini: {fileID: 1167484975843896, guid: 7e2884ccdbab6da43989fbb33a275fa6,
     type: 2}
+  price: {fileID: 0}
 --- !u!114 &307571308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,9 +1309,9 @@ GameObject:
   - component: {fileID: 1315846373}
   - component: {fileID: 1315846372}
   - component: {fileID: 1315846371}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TowerBomb
-  m_TagString: Untagged
+  m_TagString: BombBtn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1348,6 +1349,7 @@ MonoBehaviour:
     type: 2}
   towerObjectMini: {fileID: 1454411875312552, guid: e1dbaf3070b985547abd22c634cde25e,
     type: 2}
+  price: {fileID: 0}
 --- !u!114 &1315846372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1677,26 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 814470318}
+    - target: {fileID: 114037711888475276, guid: 3966208f56833f649b4ae344a07099b4,
+        type: 2}
+      propertyPath: towerObject
+      value: 
+      objectReference: {fileID: 1297106298953254, guid: cbec45fe7b182ba4fada11f73e5fb595,
+        type: 2}
+    - target: {fileID: 114037711888475276, guid: 3966208f56833f649b4ae344a07099b4,
+        type: 2}
+      propertyPath: towerObjectMini
+      value: 
+      objectReference: {fileID: 1297106298953254, guid: db463c3ee9f8d0e48b8752f206c69451,
+        type: 2}
+    - target: {fileID: 1902942798281788, guid: 3966208f56833f649b4ae344a07099b4, type: 2}
+      propertyPath: m_Name
+      value: TowerArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902942798281788, guid: 3966208f56833f649b4ae344a07099b4, type: 2}
+      propertyPath: m_TagString
+      value: ArrowBtn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3966208f56833f649b4ae344a07099b4, type: 2}
   m_IsPrefabParent: 0

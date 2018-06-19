@@ -9,6 +9,9 @@ TagManager:
   - WoodenTower
   - towerField
   - Gate
+  - ArrowBtn
+  - StoneBtn
+  - BombBtn
   layers:
   - Default
   - TransparentFX

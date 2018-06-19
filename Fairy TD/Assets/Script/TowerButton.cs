@@ -24,7 +24,7 @@ public class TowerButton : MonoBehaviour {
 
     void Start()
     {
-        price.text = tower.Price.ToString("00");
+       // price.text = tower.Price.ToString("00");
     }
 
     void Update()

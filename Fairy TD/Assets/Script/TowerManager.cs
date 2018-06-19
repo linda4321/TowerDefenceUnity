@@ -35,17 +35,26 @@ public class TowerManager : MonoBehaviour {
     {
         if (towerToMove != null)
             Destroy(towerToMove);
-        pressed = selected;
-        towerToMove = GameObject.Instantiate(pressed.TowerObjectMini);
-        towerToMove.gameObject.transform.eulerAngles = new Vector3(
-            towerToMove.transform.eulerAngles.x, 
-            towerToMove.transform.eulerAngles.y, 
-            towerToMove.transform.eulerAngles.z);
-        if (towerToMove.tag == "WoodenTower")
-            towerToMove.gameObject.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
+        if(pressed == null || pressed.tag != selected.tag)
+        {
+            pressed = selected;
+            towerToMove = GameObject.Instantiate(pressed.TowerObjectMini);
+            towerToMove.gameObject.transform.eulerAngles = new Vector3(
+                towerToMove.transform.eulerAngles.x,
+                towerToMove.transform.eulerAngles.y,
+                towerToMove.transform.eulerAngles.z);
+            if (towerToMove.tag == "WoodenTower")
+                towerToMove.gameObject.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
+            else
+                towerToMove.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            isPressed = true;
+        }
         else
-            towerToMove.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-        isPressed = true;
+        {
+            isPressed = false;
+            pressed = null;
+        }
+       
     }
 
     public TowerButton PressedButton

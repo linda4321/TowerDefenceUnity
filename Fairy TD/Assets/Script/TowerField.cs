@@ -16,8 +16,8 @@ public class TowerField : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                try
-                {
+               // try
+              //  {
                     GameObject tower = GameObject.Instantiate(TowerManager.current.PressedButton.TowerObject);
                     if (tower != null)
                     {
@@ -25,11 +25,11 @@ public class TowerField : MonoBehaviour {
                         hasTower = true;
                         TowerManager.current.towerSet();
                     }
-                }
-                catch
-                {
-                    Debug.Log("Choose tower!");
-                }
+              //  }
+             //   catch
+             //   {
+             //       Debug.Log("Choose tower!");
+             //   }
             }
         }
     }
