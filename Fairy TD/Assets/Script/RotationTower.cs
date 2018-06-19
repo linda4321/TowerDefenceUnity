@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombTower : Tower {
+public class RotationTower : Tower {
 
     public GameObject topBase;
 
