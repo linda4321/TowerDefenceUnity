@@ -21,7 +21,7 @@ public class TowerManager : MonoBehaviour {
         {
             Vector3 mouse = Input.mousePosition;
             mouse.z = 10f;
-
+			Debug.Log ("Here");
             Vector3 trans = Camera.main.ScreenToWorldPoint(mouse);
             Vector3 size = towerToMove.GetComponent<Renderer>().bounds.size;
             float y = trans.y + size.y / 2;
@@ -43,10 +43,10 @@ public class TowerManager : MonoBehaviour {
                 towerToMove.transform.eulerAngles.x,
                 towerToMove.transform.eulerAngles.y,
                 towerToMove.transform.eulerAngles.z);
-            if (towerToMove.tag == "WoodenTower")
-                towerToMove.gameObject.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
-            else
-                towerToMove.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+			Vector3 scale = towerToMove.gameObject.transform.localScale;
+			float factor = 100f;
+			scale /= factor;
+			towerToMove.gameObject.transform.localScale = scale;
             isPressed = true;
         }
         else

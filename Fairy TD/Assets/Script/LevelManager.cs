@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour {
     public Camera mainCamera;
 
 
-    private int coins = 5;
+    private int coins = 30;
     private float currStrength;
 
     public int Coins { get { return coins; } }

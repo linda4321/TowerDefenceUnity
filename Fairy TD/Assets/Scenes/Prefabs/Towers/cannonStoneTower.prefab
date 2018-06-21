@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 1435220220681130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 779.55475, y: 25.587397, z: 695.84485}
-  m_LocalScale: {x: 10.004938, y: 10.004944, z: 10.004944}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 4641779734899378}
   - {fileID: 4817754639738152}
@@ -326,8 +326,8 @@ MonoBehaviour:
   weapon: {fileID: 1422433848225298, guid: 8d4d2295d4787984d96614f415ce53e7, type: 2}
   weaponSpawns:
   - {fileID: 4946813893106004}
-  attackSpeed: 1
+  attackSpeed: 350
   attackRadius: 100
-  attackInterval: 2
+  attackInterval: 1
   price: 5
   topBase: {fileID: 1867819817601468}
