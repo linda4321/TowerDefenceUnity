@@ -109,9 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c2289e630ba3540842c2e85c68fc05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
+  target: {fileID: 0}
   pauseToDisappear: 2
   strength: 5
+  speed: 10
 --- !u!135 &135221321290153266
 SphereCollider:
   m_ObjectHideFlags: 1

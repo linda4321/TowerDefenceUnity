@@ -68,6 +68,7 @@ public class TowerManager : MonoBehaviour {
     public void towerSet()
     {
         isPressed = false;
+        pressed = null;
         Destroy(towerToMove);
     }
 }

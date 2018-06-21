@@ -31,14 +31,16 @@ public class Weapon : MonoBehaviour
     {
         if (launch && !isGrounded)
         {
-            body.AddForce((targetPoint - transform.position), ForceMode.Impulse);
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, targetPoint, step);
+          //  body.AddForce((targetPoint - transform.position), ForceMode.Impulse);
         }
     }
 
     public void Launch(Enemy target)
     {
         transform.LookAt(target.transform.position);
-        targetPoint = target.transform.position + new Vector3(0, target.GetComponent<Collider>().bounds.size.y / 2, 0);
+        targetPoint = target.transform.position; //+ new Vector3(0, target.GetComponent<Collider>().bounds.size.y / 2, 0);
         body = GetComponent<Rigidbody>();
         launch = true;
     }
