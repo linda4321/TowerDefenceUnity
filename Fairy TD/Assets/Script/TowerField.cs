@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerField : MonoBehaviour {
+public class TowerField : MonoBehaviour
+{
 
     public int sideToFace = 0;
 
@@ -16,20 +17,21 @@ public class TowerField : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-               // try
-              //  {
-                    GameObject tower = GameObject.Instantiate(TowerManager.current.PressedButton.TowerObject);
-                    if (tower != null)
-                    {
-                        buildTower(tower);
-                        hasTower = true;
-                        TowerManager.current.towerSet();
-                    }
-              //  }
-             //   catch
-             //   {
-             //       Debug.Log("Choose tower!");
-             //   }
+                // try
+                //  {
+                GameObject tower = GameObject.Instantiate(TowerManager.Instance.PressedButton.TowerObject);
+                if (tower != null)
+                {
+                    buildTower(tower);
+                    hasTower = true;
+                    TowerManager.Instance.towerSet();
+                    TowerManager.Instance.TowersSpawned++;
+                }
+                //  }
+                //   catch
+                //   {
+                //       Debug.Log("Choose tower!");
+                //   }
             }
         }
     }
@@ -41,7 +43,7 @@ public class TowerField : MonoBehaviour {
             Color color = Color.yellow;
             gameObject.GetComponent<Renderer>().material.color = color;
         }
-        
+
     }
 
     void OnMouseExit()

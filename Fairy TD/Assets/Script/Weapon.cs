@@ -55,9 +55,13 @@ public class Weapon : MonoBehaviour
         else if (col.gameObject.tag == "Enemy" && !isGrounded)
         {
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
-            Debug.Log("Collision");
-            enemy.GetDamage(strength);
-            Destroy(this.gameObject);
+            if (!enemy.Dead)
+            {
+                Debug.Log("Collision");
+                enemy.GetDamage(strength);
+                Destroy(this.gameObject);
+            }
+           
         }
 
         OnCollision();

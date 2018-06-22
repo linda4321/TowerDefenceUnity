@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 65876071085453936}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -525,7 +525,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1874738808656224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 401.0996, y: 24.995422, z: 218.69682}
+  m_LocalPosition: {x: 1986.3462, y: 24.995422, z: 677.06946}
   m_LocalScale: {x: 14.283832, y: 14.283828, z: 14.283828}
   m_Children:
   - {fileID: 4906719240241718}

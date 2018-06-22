@@ -12,6 +12,7 @@ TagManager:
   - ArrowBtn
   - StoneBtn
   - BombBtn
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelManager : MonoBehaviour {
-
+public class LevelManager : MonoBehaviour
+{
     public static LevelManager Instance;
 
-	public int wavesNumber = 3;
     public float gateStrength = 30f;
 
     public SimpleHealthBar healthBar;
@@ -15,49 +14,53 @@ public class LevelManager : MonoBehaviour {
     public Color secondColor;
 
     public CoinPanel coinPanel;
-	public Text wavesText;
 
     public Camera mainCamera;
 
-	private int currWave = 1;
+    public WinWindow winWindow;
+    public LoseWindow loseWindow;
+
+    private int killedEnemies;
+
     private int coins = 30;
     private float currStrength;
+    private GameObject canvas;
 
     public int Coins { get { return coins; } }
-	public int Waves { get { return wavesNumber; } }
-	public int CurrWave {
-		get { return currWave; } 
-		set { 
-			currWave = value;
-			//currWave = value%(wavesNumber+1); 
-			if(currWave <= wavesNumber)
-				UpdateWavesText ();
-		} 
-	}
+    public float MaxStrength { get { return gateStrength; } }
+    public float CurrStrength { get { return currStrength; } }
 
-	private void UpdateWavesText()
-	{
-		wavesText.text = (currWave).ToString ("00") + "/" + wavesNumber.ToString ("00");
-	}
+    public int KilledEnemies
+    {
+        get { return killedEnemies; }
+        set { killedEnemies = value; }
+    }
 
     void Awake()
     {
         Instance = this;
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
+        Debug.Log("LM created");
         coinPanel.UpdateCoinPanel(coins);
         currStrength = gateStrength;
         healthBar.UpdateColor(mainColor);
         healthBar.UpdateBar(currStrength, gateStrength);
-		UpdateWavesText ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        canvas = GameObject.FindWithTag("Canvas");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (currStrength <= 0)
+            OnPlayerLose();
+
+        if (currStrength > 0 && SpawnPlace.Instance.AllEnemiesSpawned && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            OnPlayerWin();
+    }
 
     public void AddCoins(int coins)
     {
@@ -80,5 +83,18 @@ public class LevelManager : MonoBehaviour {
             healthBar.UpdateColor(secondColor);
 
         healthBar.UpdateBar(currStrength, gateStrength);
+    }
+
+    private void OnPlayerLose()
+    {
+        loseWindow.Show(canvas);
+        Destroy(this.gameObject);
+        
+    }
+
+    private void OnPlayerWin()
+    {
+        winWindow.Show(canvas);
+        Destroy(this.gameObject);
     }
 }

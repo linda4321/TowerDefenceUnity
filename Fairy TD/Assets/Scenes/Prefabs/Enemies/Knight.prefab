@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 65806086952439848}
   m_Layer: 0
   m_Name: Spear
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,7 +548,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247471420287308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 427.05093, y: 0, z: 414.9326}
+  m_LocalPosition: {x: 1960.452, y: 24.995438, z: 660.27686}
   m_LocalScale: {x: 12.323462, y: 12.323464, z: 12.323464}
   m_Children:
   - {fileID: 4652293655928856}

@@ -25,17 +25,19 @@ public class Enemy : MonoBehaviour {
 
     private bool isWalking = false;
 
+    private Rigidbody body;
+
     public bool Dead { get { return dead; } }
 
 	// Use this for initialization
 	void Start () {
    //     pathPoints = path.GetComponentsInChildren<Transform>();
         anim = GetComponent<Animator>();
+        body = GetComponent<Rigidbody>();
         anim.SetBool("walk", true);
         UpdateDestination();
         currLifeStrength = lifeStrength;
         healthBar.UpdateBar(currLifeStrength, lifeStrength);
-        Debug.Log(pathPoints.Length);
     }
 	
 	// Update is called once per frame
@@ -46,7 +48,8 @@ public class Enemy : MonoBehaviour {
             {
                 if (transform.position != currDestinationPoint)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, currDestinationPoint, speed);
+          //          body.AddForce((currDestinationPoint - transform.position), ForceMode.Acceleration);
+                     transform.position = Vector3.MoveTowards(transform.position, currDestinationPoint, speed);
                 }
                 else
                 {
@@ -92,6 +95,7 @@ public class Enemy : MonoBehaviour {
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
         Destroy(this.gameObject);
         LevelManager.Instance.AddCoins(priceForDeath);
+        LevelManager.Instance.KilledEnemies++;
     }
 
     private void UpdateDestination()
@@ -106,7 +110,6 @@ public class Enemy : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Coll with gate");
         if(col.gameObject.tag == "Gate")
         {
             LevelManager.Instance.DamageGate(attackStrength);

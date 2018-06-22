@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour {
 
-    public static TowerManager current;
+    public static TowerManager Instance;
 
     private TowerButton pressed;
     private bool isPressed = false;
     private GameObject towerToMove;
 
+
+    private int towersSpawned = 0;
+
 	// Use this for initialization
 	void Start () {
-        current = this;
+        Instance = this;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +24,6 @@ public class TowerManager : MonoBehaviour {
         {
             Vector3 mouse = Input.mousePosition;
             mouse.z = 10f;
-			Debug.Log ("Here");
             Vector3 trans = Camera.main.ScreenToWorldPoint(mouse);
             Vector3 size = towerToMove.GetComponent<Renderer>().bounds.size;
             float y = trans.y + size.y / 2;
@@ -62,6 +64,19 @@ public class TowerManager : MonoBehaviour {
         get
         {
             return pressed;
+        }
+    }
+
+    public int TowersSpawned
+    {
+        get
+        {
+            return towersSpawned;
+        }
+
+        set
+        {
+            towersSpawned = value;
         }
     }
 
