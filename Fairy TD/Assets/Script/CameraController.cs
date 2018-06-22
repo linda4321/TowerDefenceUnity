@@ -21,29 +21,38 @@ public class CameraController : MonoBehaviour {
 	void FixedUpdate () {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (currPos > 0)
-                currPos--;
-            else
-                currPos = cameraPositions.Length - 1;
-
-            MoveToPoint(cameraPositions[currPos]);
+			MoveToLeft();
         }
                
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (currPos < cameraPositions.Length - 1)
-                currPos++;
-            else
-                currPos = 0;
-
-            MoveToPoint(cameraPositions[currPos]);
+			MoveToRight ();
         }
 
     }
 
+	public void MoveToLeft()
+	{
+		if (currPos > 0)
+			currPos--;
+		else
+			currPos = cameraPositions.Length - 1;
+
+		MoveToPoint(cameraPositions[currPos]);
+	}
+
+	public void MoveToRight()
+	{
+		if (currPos < cameraPositions.Length - 1)
+			currPos++;
+		else
+			currPos = 0;
+
+		MoveToPoint(cameraPositions[currPos]);
+	}
+
     private void MoveToPoint(Transform transform)
     {
-        Debug.Log("Move " + transform.position);
         this.transform.position = transform.position;
         this.transform.rotation = transform.rotation;
     }
