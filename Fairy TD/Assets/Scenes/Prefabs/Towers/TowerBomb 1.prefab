@@ -568,8 +568,8 @@ MonoBehaviour:
   weapon: {fileID: 1891266008506280, guid: 1d27bc461596e1f42a4705c782d3e705, type: 2}
   weaponSpawns:
   - {fileID: 4823603676370792}
-  attackSpeed: 350
+  attackSpeed: 500
   attackRadius: 100
-  attackInterval: 2
+  attackInterval: 0.5
   price: 30
   topBase: {fileID: 1971082402155192}

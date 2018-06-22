@@ -1254,7 +1254,7 @@ MonoBehaviour:
   - {fileID: 4506272846963056}
   - {fileID: 4183383284830330}
   - {fileID: 4915166713528508}
-  attackSpeed: 350
+  attackSpeed: 500
   attackRadius: 100
-  attackInterval: 2
+  attackInterval: 0.5
   price: 15
