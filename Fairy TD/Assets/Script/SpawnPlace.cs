@@ -88,9 +88,8 @@ public class SpawnPlace : MonoBehaviour {
 					timer = interval;
 				} else
 					timer -= Time.deltaTime;       
-			} else {
-                currSpawnNumber += waveSpawnedNumber;
-				if (waveTimer > 0)
+			} else {             
+                if (waveTimer > 0)
 					waveTimer -= Time.deltaTime;
 				else {
 					waveTimer = waveInterval;
@@ -110,9 +109,8 @@ public class SpawnPlace : MonoBehaviour {
         int index = UnityEngine.Random.Range(0, monsterPrefabs.Length);
         GameObject obj = GameObject.Instantiate(monsterPrefabs[index], transform.position, transform.rotation) as GameObject;
         obj.GetComponent<Enemy>().Launch(pathPoints);
-  //      Debug.Log(obj.tag);
         waveSpawnedNumber++;
-        
+        currSpawnNumber++;
     }
 
     IEnumerator WaitForNewMonster()

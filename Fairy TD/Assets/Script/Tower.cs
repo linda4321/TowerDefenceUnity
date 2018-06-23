@@ -55,9 +55,17 @@ public class Tower : MonoBehaviour {
                 }
             }
         }
-        
+        if (target != null)
+        {
+            if (DistanceToEnemy(target) > attackRadius || target.Dead)
+            {
+                target = null;
+                attackTimer = 0;
+            }
+                
+        }
 
-        if(target != null)
+        if (target != null)
         {
             RotateToTarget(target.transform.position);
             if(attackTimer <= 0)
@@ -68,8 +76,6 @@ public class Tower : MonoBehaviour {
             else
                 attackTimer -= Time.deltaTime;
 
-            if (DistanceToEnemy(target) > attackRadius || target.Dead)
-                target = null;
         }
     }
 

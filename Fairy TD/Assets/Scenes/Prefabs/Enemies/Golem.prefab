@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  lifeStrength: 20
+  lifeStrength: 35
   attackStrength: 5
   priceForDeath: 10
   healthBar: {fileID: 114441950870699530}

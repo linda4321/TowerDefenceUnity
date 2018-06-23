@@ -22,7 +22,7 @@ public class LevelManager : MonoBehaviour
 
     private int killedEnemies;
 
-    private int coins = 30;
+    private int coins = 10;
     private float currStrength;
     private GameObject canvas;
 

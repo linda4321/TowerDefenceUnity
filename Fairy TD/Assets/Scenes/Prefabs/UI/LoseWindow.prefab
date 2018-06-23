@@ -361,7 +361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114824460024465058, guid: 44da4c52e455a5243acdaa969fd2d34f,
+      - m_Target: {fileID: 114434212583338040, guid: 19cebc6c9e59dde48a8a163b5e7b5f3e,
           type: 2}
         m_MethodName: SwitchToScene
         m_Mode: 5
@@ -373,7 +373,7 @@ MonoBehaviour:
           m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114824460024465058, guid: 44da4c52e455a5243acdaa969fd2d34f,
+      - m_Target: {fileID: 114434212583338040, guid: 19cebc6c9e59dde48a8a163b5e7b5f3e,
           type: 2}
         m_MethodName: PlaySound
         m_Mode: 2
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114824460024465058, guid: 44da4c52e455a5243acdaa969fd2d34f,
+      - m_Target: {fileID: 114434212583338040, guid: 19cebc6c9e59dde48a8a163b5e7b5f3e,
           type: 2}
         m_MethodName: SwitchToScene
         m_Mode: 5
@@ -499,7 +499,7 @@ MonoBehaviour:
           m_StringArgument: Level_01
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114824460024465058, guid: 44da4c52e455a5243acdaa969fd2d34f,
+      - m_Target: {fileID: 114434212583338040, guid: 19cebc6c9e59dde48a8a163b5e7b5f3e,
           type: 2}
         m_MethodName: PlaySound
         m_Mode: 2

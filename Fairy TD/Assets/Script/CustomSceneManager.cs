@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class CustomSceneManager : MonoBehaviour {
 
-    public static SceneManager Instance;
+    public static CustomSceneManager Instance;
+
+    private AudioSource source;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        source = GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,8 +32,6 @@ public class CustomSceneManager : MonoBehaviour {
 
 	public void PlaySound(AudioClip sound)
 	{
-		AudioSource audio = gameObject.AddComponent<AudioSource>();
-		audio.clip = sound;
-		audio.Play ();
-	}
+        Instance.source.PlayOneShot(sound);
+    }
 }

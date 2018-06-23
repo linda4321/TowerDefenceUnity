@@ -17,8 +17,9 @@ public class RotationTower : Tower {
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
+        base.Update();
         if(target == null)
         {
             topBase.transform.eulerAngles = Vector3.Lerp(topBase.transform.rotation.eulerAngles, startRot, Time.deltaTime);

@@ -8,9 +8,9 @@ public class WinWindow : DialogWindow {
     public Text coins;
     public Text life;
     public Text enemies;
-//    public Text allEnemies;
     public Text towers;
 
+    
 
 	// Use this for initialization
 	void Start () {
