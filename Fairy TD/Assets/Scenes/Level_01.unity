@@ -1858,6 +1858,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1317522676194106, guid: a8eb952c86ec70040bf5a5cf6a5bfc43,
         type: 2}
+    - target: {fileID: 114983934477021910, guid: 885ea3c24f8c3124ca0671ce1b04000e,
+        type: 2}
+      propertyPath: towerObjectMini
+      value: 
+      objectReference: {fileID: 1276876088343116, guid: e7d42744be61c164a8a8aafd1bd0acb5,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 885ea3c24f8c3124ca0671ce1b04000e, type: 2}
   m_IsPrefabParent: 0
