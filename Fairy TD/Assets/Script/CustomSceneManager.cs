@@ -22,4 +22,11 @@ public class CustomSceneManager : MonoBehaviour {
         Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
+
+	public void PlaySound(AudioClip sound)
+	{
+		AudioSource audio = gameObject.AddComponent<AudioSource>();
+		audio.clip = sound;
+		audio.Play ();
+	}
 }

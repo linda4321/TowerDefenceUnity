@@ -5,6 +5,7 @@ using UnityEngine.UI;
 [AddComponentMenu( "UI/Simple Health Bar/Simple Health Bar" )]
 public class SimpleHealthBar : MonoBehaviour
 {	
+	
 	// COLOR OPTIONS //
 	public Image barImage;
 	public enum ColorMode
@@ -15,6 +16,7 @@ public class SimpleHealthBar : MonoBehaviour
 	public ColorMode colorMode;
 	public Color barColor = Color.white;
 	public Gradient barGradient = new Gradient();
+
 
 	// TEXT OPTIONS //
 	public enum DisplayText
@@ -50,7 +52,6 @@ public class SimpleHealthBar : MonoBehaviour
 	/// This float stores the target amount of fill. This value is current with Fill Constraints.
 	/// </summary>
 	float targetFill = 0.0f;
-
 
 	/// <summary>
 	/// Displays the text.

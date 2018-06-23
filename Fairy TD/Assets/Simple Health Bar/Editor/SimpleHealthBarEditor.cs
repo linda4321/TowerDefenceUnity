@@ -41,7 +41,7 @@ public class SimpleHealthBarEditor : Editor
 	float testValue = 100.0f;
 
 	string barName = "healthBar";
-
+	public AudioClip sound;
 
 	void OnEnable ()
 	{

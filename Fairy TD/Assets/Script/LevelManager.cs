@@ -44,7 +44,6 @@ public class LevelManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("LM created");
         coinPanel.UpdateCoinPanel(coins);
         currStrength = gateStrength;
         healthBar.UpdateColor(mainColor);

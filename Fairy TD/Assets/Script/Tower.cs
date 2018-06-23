@@ -86,7 +86,6 @@ public class Tower : MonoBehaviour {
     private void Attack()
     {
         ChangeWeaponSpawnPoint();
- //       Debug.Log("Attack: " + target.gameObject.name);
         audio.Play();
         GameObject obj = GameObject.Instantiate(this.weapon, weaponSpawnPoint.position, weapon.transform.rotation);
         Weapon weaponObj = obj.GetComponent<Weapon>();

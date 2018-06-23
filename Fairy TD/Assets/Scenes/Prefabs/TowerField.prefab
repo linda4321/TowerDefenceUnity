@@ -105,4 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f787a9367fe124eb730094ba5c0600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideToFace: 0
+  sound: {fileID: 8300000, guid: 19f89c6e740e7447f9e12a8310d3e973, type: 3}
