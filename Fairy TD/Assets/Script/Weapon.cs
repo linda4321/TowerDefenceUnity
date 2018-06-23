@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-
+    
     public Enemy target;
     public float pauseToDisappear = 2f;
     public float strength = 5f;
 
     public float speed = 10f;
 
+    
+
     private bool isGrounded;
 
     private bool launch;
     private Vector3 targetPoint;
     private Rigidbody body;
+
+   
     // Use this for initialization
     void Start()
     {
+       
     }
 
     // Update is called once per frame
@@ -57,7 +62,7 @@ public class Weapon : MonoBehaviour
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
             if (!enemy.Dead)
             {
-                Debug.Log("Collision");
+     //           Debug.Log("Collision");
                 enemy.GetDamage(strength);
                 Destroy(this.gameObject);
             }

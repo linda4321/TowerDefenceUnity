@@ -54,20 +54,21 @@ public class TowerField : MonoBehaviour
     private void buildTower(GameObject tower)
     {
         Transform trans = this.transform;
-        Vector3 size = tower.GetComponent<Renderer>().bounds.size;
+        Vector3 size = tower.GetComponentInChildren<Renderer>().bounds.size;
         float y = trans.position.y + size.y / 2;
         if (tower.tag == "WoodenTower")
             y -= size.y / 7;
-        float angY = tower.transform.eulerAngles.y;
-        if (sideToFace == 1)
-            angY -= 90;
-        else if (sideToFace == 2)
-            angY -= 180;
-        else if (sideToFace == 3)
-            angY += 90;
+    //    float angY = tower.transform.eulerAngles.y;
+        //if (sideToFace == 1)
+        //    angY -= 90;
+        //else if (sideToFace == 2)
+        //    angY -= 180;
+        //else if (sideToFace == 3)
+        //    angY += 90;
+     //   tower.gameObject.transform.rotation = trans.rotation;
         tower.gameObject.transform.eulerAngles = new Vector3(
                 tower.transform.eulerAngles.x,
-                angY,
+                trans.rotation.eulerAngles.y,
                 tower.transform.eulerAngles.z);
         tower.transform.position = new Vector3(trans.position.x, y, trans.position.z);
         LevelManager.Instance.RemoveCoins(tower.GetComponent<Tower>().Price);

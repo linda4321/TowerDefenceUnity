@@ -1258,3 +1258,4 @@ MonoBehaviour:
   attackRadius: 100
   attackInterval: 0.5
   price: 15
+  sound: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}

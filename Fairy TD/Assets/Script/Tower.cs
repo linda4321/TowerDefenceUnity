@@ -15,26 +15,28 @@ public class Tower : MonoBehaviour {
 
     public int price = 5;
 
+    public AudioClip sound;
+
     protected Enemy target;
 
     private Transform weaponSpawnPoint;
     private Collider[] objectsInArea;
     private float attackTimer;
 
+    private AudioSource audio;
+
     public int Price { get { return price; } }
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
         attackTimer = attackInterval;
+
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.clip = sound;
     }
 
-    protected virtual void InitTower()
-    {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    public void Update () {
        
         if(target == null)
         {
@@ -57,6 +59,7 @@ public class Tower : MonoBehaviour {
 
         if(target != null)
         {
+            RotateToTarget(target.transform.position);
             if(attackTimer <= 0)
             {
                 Attack();
@@ -70,10 +73,10 @@ public class Tower : MonoBehaviour {
         }
     }
 
-    protected void FindTarget()
+    protected virtual void RotateToTarget(Vector3 target)
     {
-
     }
+
 
     private float DistanceToEnemy(Enemy target)
     {
@@ -83,7 +86,8 @@ public class Tower : MonoBehaviour {
     private void Attack()
     {
         ChangeWeaponSpawnPoint();
-        Debug.Log("Attack: " + target.gameObject.name);
+ //       Debug.Log("Attack: " + target.gameObject.name);
+        audio.Play();
         GameObject obj = GameObject.Instantiate(this.weapon, weaponSpawnPoint.position, weapon.transform.rotation);
         Weapon weaponObj = obj.GetComponent<Weapon>();
         weaponObj.speed = attackSpeed;

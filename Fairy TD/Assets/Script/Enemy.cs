@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
+ //   private static int counter = 0;
+
     public float speed = 1f;
  //   public GameObject path;
     public float lifeStrength = 5f;
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour {
     private Vector3 deltaPos;
 
     private bool dead = false;
+    private bool deadAnim = false;
     private float currLifeStrength;
 
     private bool isWalking = false;
@@ -72,22 +75,26 @@ public class Enemy : MonoBehaviour {
         currLifeStrength -= hurt;
 
         healthBar.UpdateBar(currLifeStrength, lifeStrength);
-
+        if (currLifeStrength <= 0)
+            dead = true;
         StartCoroutine(WaitForDamage());
     }
 
     private IEnumerator WaitForDamage()
     {
         yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0).Length);
-        if (currLifeStrength <= 0)
-            Die();
+        if (currLifeStrength <= 0 && !deadAnim)
+            PlayDeadAnim();
     }
 
-    private void Die()
+
+    private void PlayDeadAnim()
     {
-        dead = true;
+    //    counter++;
+        deadAnim = true;
+    //    Debug.Log("Dead " + counter);
         anim.SetTrigger("dead");
-        StartCoroutine(WaitForDeath());    
+        StartCoroutine(WaitForDeath());
     }
 
     IEnumerator WaitForDeath()
