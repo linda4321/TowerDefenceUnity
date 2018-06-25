@@ -328,7 +328,7 @@ MonoBehaviour:
   - {fileID: 4946813893106004}
   attackSpeed: 500
   attackRadius: 100
-  attackInterval: 0.5
+  attackInterval: 1
   price: 5
   sound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
   topBase: {fileID: 1867819817601468}

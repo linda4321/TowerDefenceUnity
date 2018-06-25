@@ -570,7 +570,7 @@ MonoBehaviour:
   - {fileID: 4823603676370792}
   attackSpeed: 700
   attackRadius: 150
-  attackInterval: 0.7
+  attackInterval: 0.5
   price: 30
   sound: {fileID: 8300000, guid: 7bef0064f8567430cac22499c6b93d4f, type: 3}
   topBase: {fileID: 1971082402155192}
